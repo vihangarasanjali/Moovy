@@ -1,6 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <a href="{% url 'movies:index' %}">Movies</a>
+  <section class="hero rounded shadow">
+    <div class="container">
+      <h1>Welcome to Vidly</h1>
+      <p>Discover, rent, and enjoy your favorite movies right here.</p>
+      <a href="{% url 'movies:index' %}" class="btn btn-primary btn-lg mt-3">Browse Movies</a>
+    </div>
+  </section>
 
+  <section class="mt-5 text-center">
+    <h2 class="mb-4">Why Vidly?</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h5 class="card-title">Wide Selection</h5>
+            <p class="card-text">Choose from a vast library of classic and latest movies in all genres.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h5 class="card-title">Easy Rentals</h5>
+            <p class="card-text">Rent movies with a single click and start watching instantly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h5 class="card-title">Affordable</h5>
+            <p class="card-text">Enjoy top-rated movies without breaking your budget.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
