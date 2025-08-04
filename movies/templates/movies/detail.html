@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <dl>
-        <dt>Title</dt>
-        <dd>{{movie.title}}</dd>
-        <dt>Genre</dt>
-        <dd>{{movie.genre}}</dd>
-        <dt>Stock</dt>
-        <dd>{{movie.number_in_stock}}</dd>
-    </dl>
+<div class="card mb-4 shadow-sm">
+  <div class="row g-0">
+    {% if movie.image %}
+    <div class="col-md-4 d-flex align-items-center justify-content-center p-3">
+      <img src="{{ movie.image.url }}" class="img-fluid rounded" alt="{{ movie.title }}">
+    </div>
+    {% endif %}
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{ movie.title }}</h2>
+        <p class="card-text"><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p class="card-text"><strong>Stock:</strong> {{ movie.number_in_stock }}</p>
+        <p class="card-text"><strong>Daily Rate:</strong> ${{ movie.daily_rate }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ movie.description }}</p>
+        <p class="card-text"><small class="text-muted">Added on {{ movie.date_created|date:"F j, Y, g:i a" }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="{% url 'movies:index' %}" class="btn btn-secondary">Back to Movies</a>
 {% endblock %}
