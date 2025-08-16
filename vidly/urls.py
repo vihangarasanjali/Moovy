@@ -37,6 +37,7 @@ urlpatterns = [
     path('accounts/profile/', views.profile, name='profile'),  # Profile view (protected)
     path('accounts/logout/', LogoutView.as_view(next_page='home'), name='logout'),
     path('register/', movies_views.register, name='register'),
+    path('chatbot/', movies_views.chatbot, name='chatbot'), # Chatbot view
 
 ]
 

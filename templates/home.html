@@ -38,4 +38,34 @@
       </div>
     </div>
   </section>
+
+  <!-- Floating Chatbot Icon -->
+  <a href="{% url 'chatbot' %}" id="chatbot-icon" title="Chat with AI">
+    <i class="fas fa-robot fa-2x"></i>
+  </a>
+
+  <style>
+    #chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      cursor: pointer;
+      background-color: #0d6efd; /* Bootstrap primary color */
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #chatbot-icon:hover {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <!-- Font Awesome for the robot icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 {% endblock %}

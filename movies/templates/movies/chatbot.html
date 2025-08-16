@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-lg">
+      <div class="card-header bg-primary text-white text-center">
+        <h4>🤖 AI Chatbot</h4>
+      </div>
+      <div class="card-body">
+        <form method="post" class="d-flex mb-3">
+          {% csrf_token %}
+          <input type="text" name="user_input" class="form-control me-2" placeholder="Ask me anything..." required>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+
+        <div id="chat-window" class="d-flex flex-column gap-2">
+          {% if messages %}
+            {% for msg in messages %}
+              {% if msg.sender == 'user' %}
+                <div class="align-self-end p-2 bg-primary text-white rounded" style="max-width: 75%;">
+                  <strong>You:</strong> {{ msg.text }}
+                </div>
+              {% else %}
+                <div class="align-self-start p-2 bg-light border rounded" style="max-width: 75%;">
+                  <strong>AI:</strong> {{ msg.text }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+
+          {% if error_message %}
+            <div class="align-self-start p-2 bg-danger text-white rounded" style="max-width: 75%;">
+              ⚠️ {{ error_message }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
