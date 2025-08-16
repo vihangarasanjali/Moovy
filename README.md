@@ -19,7 +19,8 @@ Moovy is a Django-based web application for renting movies online. It features u
 - Python 3.12  
 - Django 2.1  
 - Bootstrap 5  
-- SQLite (default Django database)  
+- SQLite (default Django database)
+- OpenAI
 
 ---
 
@@ -51,6 +52,19 @@ python manage.py createsuperuser
 ```
 python manage.py runserver
 ```
+
+## AI Chatbot Integration
+
+Moovy includes an AI-powered chatbot to assist users with movie recommendations and general queries.
+
+### Features
+- Ask about movie suggestions, genres, and availability.
+- Interactive chat interface built with Django and Bootstrap.
+- Chatbot powered by OpenAI's GPT models (`gpt-3.5-turbo` or `gpt-4o-mini`).
+
+### Setup
+1. **Add your OpenAI API key** in a `.env` file at the project root:
+
 
 
 
